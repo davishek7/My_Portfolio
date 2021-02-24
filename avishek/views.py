@@ -6,6 +6,8 @@ from .models import Post
 
 def sendemail(request):
 
+	posts=Post.objects.all()
+
 	if request.method=="POST":
 		name=request.POST['name']
 		subject=request.POST['subject']
@@ -13,15 +15,14 @@ def sendemail(request):
 		message=request.POST['message']
 		
 		send_mail(
-			f'{subject} from {name}',
+			f'{subject} from {name}({email})',
 			message,
 			email,
 			[os.environ.get('RECEIVER_EMAIL')]
 		)
-		return redirect('email')
 		messages.success(request,f'Thank you, {name} for contacting me,I will be back to you shortly.')
+		return redirect('email')	
 	
-	posts=Post.objects.all()
 	return render(request,'avishek/index.html',{'posts':posts})
 
 

@@ -398,8 +398,7 @@ h6 {
 }
 
 #messages{
-  background-color: grey;
-  color: #fff;
+  color: var(--mainText);
   padding: 10px;
   margin-top: 10px;
 }

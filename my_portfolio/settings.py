@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7-dcq0&i1x6+=x$en--y+7x6vz(t*qnrkg+**xknx)pech!_15'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','avishekdas.herokuapp.com']
 
 
 # Application definition
@@ -84,6 +84,19 @@ DATABASES = {
     }
 }
 
+"""
+Postgres Database
+
+'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -123,15 +136,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    '/var/www/static/',
 ]
 
-STATIC_ROOT=os.path.join(BASE_DIR,'static-root')
+STATIC_ROOT=(BASE_DIR/'staticfiles')
 
 MEDIA_URL='/images/'
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'static/images')
+MEDIA_ROOT=(BASE_DIR/'static/images')
 
 #SMTP Configuration
 
@@ -141,3 +155,6 @@ EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER=os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_PASS')
+
+if os.getcwd() == '/app':
+    DEBUG=False
