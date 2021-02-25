@@ -8,7 +8,6 @@ django = "*"
 python-dotenv = "*"
 gunicorn = "*"
 whitenoise = "*"
-django-crispy-forms = "*"
 pillow = "*"
 
 [dev-packages]

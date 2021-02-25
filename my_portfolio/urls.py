@@ -6,8 +6,8 @@ from avishek.views import sendemail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',sendemail,name='email'),
+    path('', sendemail, name='email'),
 ]
 
-urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
-urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
