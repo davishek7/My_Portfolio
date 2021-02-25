@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','avishekdas.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'avishekdas.herokuapp.com']
 
 
 # Application definition
@@ -135,25 +135,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-STATIC_ROOT=(BASE_DIR/'staticfiles')
+STATIC_ROOT = BASE_DIR/'staticfiles'
 
-MEDIA_URL='/images/'
+MEDIA_ROOT = BASE_DIR/'static/images'
 
-MEDIA_ROOT=(BASE_DIR/'static/images')
+# SMTP Configuration
 
-#SMTP Configuration
-
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST=os.environ.get('EMAIL_HOST')
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_PASS')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 if os.getcwd() == '/app':
-    DEBUG=False
+    DEBUG = False
