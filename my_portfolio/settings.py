@@ -131,16 +131,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = BASE_DIR/'staticfiles'
+MEDIA_ROOT = BASE_DIR/'static/images'
+
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-
-STATIC_ROOT = BASE_DIR/'staticfiles'
-
-MEDIA_ROOT = BASE_DIR/'static/images'
 
 # SMTP Configuration
 
@@ -153,3 +152,4 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 if os.getcwd() == '/app':
     DEBUG = False
+    MEDIA_URL = '/static/images/'
