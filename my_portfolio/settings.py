@@ -135,7 +135,7 @@ STATIC_ROOT = BASE_DIR/'staticfiles'
 MEDIA_ROOT = BASE_DIR/'static/images'
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
+MEDIA_URL = '/static/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
@@ -152,7 +152,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 if os.getcwd() == '/app':
     DEBUG = False
-    MEDIA_URL = '/static/images/'
 
 # Run manage.py check --deploy to check if your settings.py file is deployment ready or not
 
