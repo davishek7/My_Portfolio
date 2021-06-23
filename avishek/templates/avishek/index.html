@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/cc52db2e78.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
     <link id="theme-style" rel="stylesheet" type="text/css" href="" />
 
@@ -72,15 +73,7 @@
           <div class="about-me">
             <h4>More about me</h4>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p></p>
 
             <hr />
 
@@ -111,14 +104,9 @@
           <div class="social-links">
             <img src="{% static 'images/follow.png' %}" alt="follow me" id="social_img" />
             <h3>Find me on Twitter & Linkedin</h3>
-
-            <a target="_blank" href="https://twitter.com/davishek7"
-              >Twitter: @davishek7</a
-            >
-            <br />
-            <a target="_blank" href="https://www.linkedin.com/in/davishek7/"
-              >Linkedin: @davishek7</a
-            >
+            <a target="_blank" href="https://twitter.com/davishek7"><i class="fab fa-twitter-square twitter"></i> / davishek7</a>
+            <br>
+            <a target="_blank" href="https://www.linkedin.com/in/davishek7/"><i class="fab fa-linkedin linkedin"></i> / davishek7</a>
           </div>
         </div>
       </div>
@@ -131,11 +119,13 @@
           {% for post in posts %}
           <div>
             <div class="post">
-              <img src="{{post.image.url}}" class="thumbnail" alt="Post Picture"/>
+              <img src="{{post.image.url}}" class="thumbnail" alt="{{post.name}}"/>
               <div class="post-preview">
                 <h6 class="post-title">{{post.name}}</h6>
-                <p class="post-intro">{{post.details}}</p>
-                <p><a target="_blank" href="{{post.link}}">Check the app &#8594;</a></p>
+                <div style="padding:20px">
+                  <a href="{{post.github_repo}}" target="_blank" style="font-size: 25px; float:left;color:black"><i class="fab fa-github"></i></a>
+                  <a target="_blank" href="{{post.link}}" style="float:right;"><i class="fas fa-external-link-alt"></i></a>
+                </div>
               </div>
             </div>
           </div>

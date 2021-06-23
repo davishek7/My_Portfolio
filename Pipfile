@@ -9,6 +9,7 @@ python-dotenv = "*"
 gunicorn = "*"
 whitenoise = "*"
 pillow = "*"
+django-cloudinary-storage = "*"
 
 [dev-packages]
 
