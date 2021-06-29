@@ -15,7 +15,7 @@ for (var i = 0; themeDots.length > i; i++) {
   });
 }
 
-function setTheme(mode) {
+const setTheme = (mode) => {
   if (mode == "light") {
     document.getElementById("theme-style").href = "static/css/default.css";
   }
@@ -39,7 +39,8 @@ window.onscroll = function () {
   scrollFunction();
 };
 
-function scrollFunction() {
+
+const scrollFunction = () => {
   if (
     document.body.scrollTop > 200 ||
     document.documentElement.scrollTop > 200
@@ -55,7 +56,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-function ValidateEmail(inputText) {
+const ValidateEmail = (inputText) => {
   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if (inputText.value.match(mailformat)) {
     alert("Valid email address!");

@@ -301,8 +301,18 @@ h6 {
   display: grid;
   align-content: center;
   text-align: center;
+  font-size:25px;
 }
 
+.twitter{
+  color:  #1DA1F2;
+  background-color: white;
+}
+
+.linkedin{
+  color:  #2867B2;
+  background-color: white;
+}
 #social_img {
   width: 100%;
 }
@@ -317,6 +327,7 @@ h6 {
 
 .post {
   border: 1px solid var(--borderColor);
+  height: max-content;
 }
 
 .thumbnail {
@@ -324,11 +335,18 @@ h6 {
   height: 180px;
   display: block;
   object-fit: cover;
+  border: 1px solid var(--borderColor);
 }
 
 .post-preview {
   background-color: #fff;
   padding: 15px;
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .post-title {
