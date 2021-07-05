@@ -160,7 +160,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 if os.getcwd() == '/app':
     DEBUG = False
-    MEDIA_URL = '/static/images/'
 
 # Run manage.py check --deploy to check if your settings.py file is deployment ready or not
 
