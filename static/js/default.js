@@ -31,8 +31,6 @@ const setTheme = (mode) => {
   localStorage.setItem("theme", mode);
 }
 
-let blue = document.getElementById("blue");
-
 var mybutton = document.getElementById("topBtn");
 
 window.onscroll = function () {
